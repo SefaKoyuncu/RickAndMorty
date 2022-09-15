@@ -22,6 +22,21 @@
             app:layout_constraintEnd_toEndOf="@+id/editTextSearch"
             app:layout_constraintTop_toTopOf="@+id/editTextSearch" />
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="360dp"
+            android:layout_height="360dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSearch"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/notfound1"
+            app:lottie_speed="1.2" />
+
         <TextView
             android:id="@+id/textViewCancel"
             android:layout_width="wrap_content"
@@ -74,10 +89,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="6dp"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="All Characters"
+                android:fontFamily="@font/get_schwifty"
+                android:gravity="center"
+                android:lineSpacingExtra="12dp"
+                android:scaleX="1.2"
+                android:text="Rick and Morty \nCharacters"
                 android:textColor="#FFFFFF"
-                android:textSize="26sp"
+                android:textSize="36sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1,7 +1,6 @@
 package com.sefa.rickandmorty;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sefa.rickandmorty.retrofit.Result;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -19,12 +19,12 @@ import java.util.List;
 public class Adapter extends RecyclerView.Adapter<Adapter.CardViewHolder> {
 
     private Context mContext;
-    private List<Characters> charactersList;
+    private List<Result> resultList;
 
 
-    public Adapter(Context mContext, List<Characters> charactersList) {
+    public Adapter(Context mContext, List<Result> resultList) {
         this.mContext = mContext;
-        this.charactersList = charactersList;
+        this.resultList = resultList;
     }
 
     @NonNull
@@ -37,13 +37,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CardViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
-        Characters character = charactersList.get(position);
+        Result result = resultList.get(position);
 
-        holder.textViewCharacterName.setText(character.getName());
-      //  Picasso.with(mContext).load(character.getImage()).into(holder.imageViewCharacter);
-
-        Picasso.get().load(character.getImage()).into(holder.imageViewCharacter);
-
+        holder.textViewCharacterName.setText(result.getName());
+        Picasso.get().load(result.getImage()).into(holder.imageViewCharacter);
 
        /* holder.cLayout.setOnClickListener(view -> {
             Intent intent = new Intent(mContext, CharacterDetailsActivity.class);
@@ -58,7 +55,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CardViewHolder> {
 
     @Override
     public int getItemCount() {
-        return charactersList.size();
+        return resultList.size();
     }
 
     public class CardViewHolder extends RecyclerView.ViewHolder {

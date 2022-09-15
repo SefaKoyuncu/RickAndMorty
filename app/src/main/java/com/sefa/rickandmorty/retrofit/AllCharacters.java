@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 import com.sefa.rickandmorty.retrofit.Info;
 import com.sefa.rickandmorty.retrofit.Result;
 
-public class AllCharacaters {
+public class AllCharacters {
 
     @SerializedName("info")
     @Expose
