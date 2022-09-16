@@ -27,7 +27,7 @@
 -Clean Code
 
 <br />
-<img src="images/Android_logo.png" width="100" height="100"><a id="raw-url" href="https://raw.githubusercontent.com/SefaKoyuncu/RickAndMorty/new/master/rickandmortycharacters.apk">Download APK Here</a>
+<img src="images/Android_logo.png" width="100" height="100"><a id="raw-url" href="https://raw.githubusercontent.com/SefaKoyuncu/RickAndMorty/blob/master/rickandmortycharacters.apk">Download APK Here</a>
 
 ------------
 #### Screenshots
@@ -47,8 +47,8 @@
   <tr>
     <td><img src="images/searchrick.jpeg" width="200" height="400"></td>
     <td><img src="images/searchnotfound.jpeg" width="200" height="400"></td>
-      <td><img src="images/square.jpeg" width="200" height="400"></td>
-    <td><img src="images/circle.jpeg" width="200" height="400"></td>
+      <td><img src="images/square.png" width="200" height="400"></td>
+    <td><img src="images/circle.png" width="200" height="400"></td>
 
   </tr>
  </table>
