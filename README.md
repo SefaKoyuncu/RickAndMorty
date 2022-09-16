@@ -47,8 +47,8 @@
   <tr>
     <td><img src="images/searchrick.jpeg" width="200" height="400"></td>
     <td><img src="images/searchnotfound.jpeg" width="200" height="400"></td>
-      <td><img src="images/square.png" width="200" height="400"></td>
-    <td><img src="images/circle.png" width="200" height="400"></td>
+      <td><img src="images/square.png" width="200" height="200"></td>
+    <td><img src="images/circle.png" width="200" height="200"></td>
 
   </tr>
  </table>
