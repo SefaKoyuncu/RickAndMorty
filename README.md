@@ -16,8 +16,6 @@
 
 -DataBinding  
  
--SharedPreferences
-
 -Recyclerview-Cardview
 
 -Lottie
