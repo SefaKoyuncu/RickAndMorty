@@ -1,6 +1,7 @@
 package com.sefa.rickandmorty;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,15 +43,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CardViewHolder> {
         holder.textViewCharacterName.setText(result.getName());
         Picasso.get().load(result.getImage()).into(holder.imageViewCharacter);
 
-       /* holder.cLayout.setOnClickListener(view -> {
-            Intent intent = new Intent(mContext, CharacterDetailsActivity.class);
-            intent.putExtra("Movie Id", character.getId());
-            intent.putExtra("Character Name",character.getName());
-            intent.putExtra("Character Status", character.getStatus());
-            intent.putExtra("Character Location", character.getLocation());
-            intent.putExtra("Character Image", character.getImage());
+        holder.cLayout.setOnClickListener(view ->
+        {
+            Intent intent = new Intent(mContext, CharactersDetails.class);
+            intent.putExtra("Character Name",result.getName());
+            intent.putExtra("Character Status", result.getStatus());
+            intent.putExtra("Character Location", result.getLocation().getName());
+            intent.putExtra("Character Image", result.getImage());
             mContext.startActivity(intent);
-        });*/
+        });
     }
 
     @Override

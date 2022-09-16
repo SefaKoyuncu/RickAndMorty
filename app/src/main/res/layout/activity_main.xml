@@ -4,6 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable name="mainActivityNesnesi" type="com.sefa.rickandmorty.MainActivity" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
@@ -16,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
+            android:onClick="@{() -> mainActivityNesnesi.clearClick()}"
             android:src="@drawable/cancel"
             android:translationZ="90dp"
             app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
@@ -34,7 +39,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextSearch"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/notfound1"
+            app:lottie_rawRes="@raw/notfound"
             app:lottie_speed="1.2" />
 
         <TextView
@@ -44,6 +49,7 @@
             android:layout_marginEnd="9dp"
             android:fontFamily="@font/quicksand_medium"
             android:text="Cancel"
+            android:onClick="@{() -> mainActivityNesnesi.cancelClick()}"
             android:textColor="@color/yellow"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -83,25 +89,79 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/textViewTitle2"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:layout_marginBottom="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textViewTitle3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:fontFamily="@font/get_schwifty"
+                    android:gravity="center"
+                    android:text="and"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textViewTitle2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewTitle4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:fontFamily="@font/get_schwifty"
+                    android:gravity="center"
+                    android:text="Morty"
+                    android:textColor="#FFFFFF"
+                    android:textSize="38sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textViewTitle3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/get_schwifty"
+                    android:gravity="center"
+                    android:text="Rick"
+                    android:textColor="#FFFFFF"
+                    android:textSize="38sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/get_schwifty"
                 android:gravity="center"
                 android:lineSpacingExtra="12dp"
                 android:scaleX="1.2"
-                android:text="Rick and Morty \nCharacters"
+                android:text="Characters"
                 android:textColor="#FFFFFF"
-                android:textSize="36sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView

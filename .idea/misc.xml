@@ -7,10 +7,15 @@
         <entry key="..\:/Users/sefak/AndroidStudioProjects/RickandMorty/app/src/main/res/drawable-v24/cancel.xml" value="0.125" />
         <entry key="..\:/Users/sefak/AndroidStudioProjects/RickandMorty/app/src/main/res/drawable-v24/cursor.xml" value="0.125" />
         <entry key="..\:/Users/sefak/AndroidStudioProjects/RickandMorty/app/src/main/res/drawable-v24/search.xml" value="0.125" />
+        <entry key="..\:/Users/sefak/AndroidStudioProjects/RickandMorty/app/src/main/res/drawable/back.xml" value="0.137" />
         <entry key="..\:/Users/sefak/AndroidStudioProjects/RickandMorty/app/src/main/res/drawable/frame_card.xml" value="0.137" />
+        <entry key="..\:/Users/sefak/AndroidStudioProjects/RickandMorty/app/src/main/res/layout/activity_characters_details.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/sefak/AndroidStudioProjects/RickandMorty/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/sefak/AndroidStudioProjects/RickandMorty/app/src/main/res/layout/card_design_character.xml" value="0.6" />
         <entry key="..\:/Users/sefak/AndroidStudioProjects/RickandMorty/app/src/main/res/layout/loading_video.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/sefak/AndroidStudioProjects/RickandMorty/app/src/main/res/mipmap-anydpi-v26/circle.xml" value="0.137" />
+        <entry key="..\:/Users/sefak/AndroidStudioProjects/RickandMorty/app/src/main/res/mipmap-anydpi-v26/round.xml" value="0.134" />
+        <entry key="..\:/Users/sefak/AndroidStudioProjects/RickandMorty/app/src/main/res/mipmap-anydpi-v26/square.xml" value="0.137" />
       </map>
     </option>
   </component>

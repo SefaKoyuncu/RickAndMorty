@@ -38,24 +38,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         binding= DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.setMainActivityNesnesi(this);
 
         charactersDaoInterface= ApiUtils.getCharactersDaoInterface();
+
         dialog = new Dialog(this,android.R.style.Theme_Black_NoTitleBar);
+
         allCharacters();
         allresultList.clear();
         buildRecyclerView();
         startLoadingdialog();
-        binding.textViewCancel.setOnClickListener(view ->
-        {
-            binding.editTextSearch.getText().clear();
-            //binding.imageViewNotFound.setVisibility(View.INVISIBLE);
-            hideKeyboard(this);
-        });
 
-        binding.imageViewClear.setOnClickListener(view -> {
-            binding.editTextSearch.getText().clear();
-            //binding.imageViewNotFound.setVisibility(View.INVISIBLE);
-        });
         binding.editTextSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -74,8 +67,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void allCharacters()
-    {
+    public void allCharacters(){
         charactersDaoInterface.allCharacaters().enqueue(new Callback<AllCharacters>() {
             @Override
             public void onResponse(Call<AllCharacters> call, retrofit2.Response<AllCharacters> response)
@@ -96,8 +88,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void searchCharacters(String text)
-    {
+    public void searchCharacters(String text){
         if (binding.editTextSearch.getText().toString().equals("")) {
             if (!allresultList.isEmpty()) {
                 adapter = new Adapter(MainActivity.this, allresultList);
@@ -109,8 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 allCharacters();
             }
         }
-        else
-        {
+        else{
             charactersDaoInterface.searchCharacters("api/character/?name=" + text).enqueue(new Callback<AllCharacters>()
             {
                 @Override
@@ -130,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         binding.rv.setVisibility(View.INVISIBLE);
                         binding.animationView.setVisibility(View.VISIBLE);
+                        hideKeyboard(MainActivity.this);
                     }
                 }
 
@@ -141,15 +132,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void buildRecyclerView()
-    {
+    private void buildRecyclerView(){
         binding.rv.setHasFixedSize(true);
         binding.rv.setLayoutManager(new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false));
         adapter = null;
     }
 
-    void startLoadingdialog()
-    {
+    void startLoadingdialog(){
         dialog.setContentView(R.layout.loading_video);
         VideoView videoView=dialog.findViewById(R.id.videoView);
         videoView.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.rickandmorty);
@@ -158,9 +147,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    // dismiss method
-    void dismissdialog()
-    {
+    void dismissdialog(){
         Handler handler = new Handler();
         handler.postDelayed(new Runnable()
         {
@@ -171,8 +158,7 @@ public class MainActivity extends AppCompatActivity {
         }, 2400);
     }
 
-    public static void hideKeyboard(Activity activity)
-    {
+    public static void hideKeyboard(Activity activity){
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
         View view = activity.getCurrentFocus();
         if (view == null)
@@ -180,5 +166,18 @@ public class MainActivity extends AppCompatActivity {
             view = new View(activity);
         }
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    public void cancelClick(){
+        binding.editTextSearch.getText().clear();
+        binding.rv.setVisibility(View.VISIBLE);
+        binding.animationView.setVisibility(View.INVISIBLE);
+        hideKeyboard(this);
+    }
+
+    public void clearClick(){
+        binding.editTextSearch.getText().clear();
+        binding.rv.setVisibility(View.VISIBLE);
+        binding.animationView.setVisibility(View.INVISIBLE);
     }
 }
